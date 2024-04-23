@@ -28,22 +28,33 @@ export default class ContatosController {
         .status(500)
         .send({ error: "Ocorreu um erro ao executar a consulta SQL" });
     }
-
-    // const contatos = await Contatos.query().orderBy('id', 'desc');
-
-    // response.status(200);
-
-    // return contatos
   }
 
   public async store({ request, response }: HttpContextContract) {
     const contatoData = await request.validate(ContatosValidator);
+
+    const validContato = await this.getContato(contatoData.dsEmail, contatoData.nrCelular);
+
+    if(validContato[0].length > 0) {
+      return {
+        valid: false
+      }
+    }
 
     const contato = await Contatos.create(contatoData);
 
     response.status(201);
 
     return contato;
+  }
+
+  async getContato(email: string, celular: string) {
+    let sql = `SELECT * FROM contatos WHERE nr_celular = '${celular}' AND ds_email = '${email}'`;
+
+    const contato = await Database.rawQuery(sql);
+
+    return contato
+
   }
 
   public async show({ params }: HttpContextContract) {

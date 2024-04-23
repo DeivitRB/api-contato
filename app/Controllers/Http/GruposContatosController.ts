@@ -23,10 +23,6 @@ export default class GruposContatosController {
   }
 
   public async show({ params }: HttpContextContract) {
-    // const groupContatos = await GrupoContatos.query().leftJoin('grupocontatos', ).where({
-    //   contatoId: params.id,
-    // });
-
     let sql = `SELECT contatos_grupocontatos.*, grupocontatos.ds_grupocontato FROM contatos_grupocontatos
     LEFT JOIN grupocontatos ON grupocontatos.id = contatos_grupocontatos.grupocontato_id
     WHERE contatos_grupocontatos.contato_id = ${params.id}`;
