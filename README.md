@@ -1,22 +1,32 @@
+# api-contato
 
-## Sistema Proposto
+API destinada ao teste da Lusati Tecnologia. Tem por objetivo fornecer os end-points nescessários para o projeto client-contato.
 
-Uma empresa precisa de uma ferramenta para controlar o envio de mensagens por WhatsApp. Durante o processo de levantamento de requisitos foi possível observar que os elementos principais dessa aplicação são Contatos e Grupo. 
+## Tecnologia utilizada
 
+- AdonisJS
 
-## Instruções
+## Comandos
 
-1. Acessar Projeto via Bitbucket
+Instalar bibliotecas
 
-2. Efetuar Clone projeto (localmente) - API feita em AdonisJS nela se encontra pronta com o model de grupos 
+```bash
+  npm install or yarn install
+```
 
-3. Validar Acesso Banco de Dados conforme credenciais de acesso abaixo 
+Rodar em desenvolvimento comandos **package.json**:
 
-4. Ao final do processo de Desenvolvimento, publicar projeto Github ou Bitbucket e disponilizar link do projeto e documentação 
+```bash
+  npm run dev or yarn dev
+```
 
-Apos baixar o projeto e instalar, rode localmente o projeto. Utilize o script run dev: npm run dev
+Listar end-points:
 
-Para listar as rotas criadas no seu projeto, utilize:> node ace list:routes
+```bash
+  node ace list:routes
+```
 
+## Autores
 
- 
+- Equipe Lusati Tecnologia (Criação)
+- [@DeivitRB](https://github.com/DeivitRB) (Edição)
