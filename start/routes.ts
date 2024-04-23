@@ -18,13 +18,13 @@
 |
 */
 
-import Route from '@ioc:Adonis/Core/Route'
+import Route from "@ioc:Adonis/Core/Route";
 
-import LiteralNamingStrategy from 'App/Models/ColumnStrategy/LiteralStrategy'
-import { BaseModel } from '@ioc:Adonis/Lucid/Orm'
+import LiteralNamingStrategy from "App/Models/ColumnStrategy/LiteralStrategy";
+import { BaseModel } from "@ioc:Adonis/Lucid/Orm";
 
 BaseModel.namingStrategy = new LiteralNamingStrategy();
 
-
-Route.resource('group', 'GroupController');
-Route.resource('contatos', 'ContatosController')
+Route.resource("group", "GroupController");
+Route.resource("contatos", "ContatosController");
+Route.resource("grupocontatos", "GruposContatosController");
